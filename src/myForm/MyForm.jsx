@@ -6,7 +6,11 @@ export default function MyForm(){
 
     
     return(
-        <form>
+        <form onSubmit={(event)=>{
+            event.preventDefault();// to stop the virtual atitude (refresh the page) when you click submit
+            //and here you can do what you want 
+            console.log(nameInput,emailInput)
+        }}>
             <label>Name:</label>                 
             <input value={nameInput} onChange={(event)=>{setNameInput(event.target.value)}}></input>
             <hr />
